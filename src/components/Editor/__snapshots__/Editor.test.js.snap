@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Editor /> renders correctly 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    bold
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    italic
+  </button>
+  <div
+    contentEditable="true"
+  >
+    This text can be edited by the user.
+  </div>
+</div>
+`;
