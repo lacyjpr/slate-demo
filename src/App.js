@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p className="App-intro">Roll your own</p>
+        <p className="App-intro">Roll your own:</p>
         <Editor />
       </div>
     );
