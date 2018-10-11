@@ -24,6 +24,8 @@ const initialValue = Value.fromJSON({
   },
 });
 
+//const transcript = '';
+
 function MarkHotkey(options) {
   const { type, key } = options;
 
@@ -57,7 +59,30 @@ class SlateEditor extends React.Component {
 
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
+    console.log('onChange called');
     this.setState({ value });
+    console.log(value);
+    return;
+  };
+
+  onTalk = transcript => {
+    console.log(transcript);
+    console.log('ontalk called');
+    console.log(this.editor);
+    if (typeof this.editor !== 'undefined' && transcript !== '') {
+      console.log(typeof this.editor);
+      this.editor.change(change => {
+        change.insertText(transcript);
+        return;
+      });
+    }
+    // } else if (typeof this.editor !== undefined) {
+    //   console.log(typeof this.editor.change);
+    //   console.log('editor not undefined');
+    //   this.editor.change(change => {
+    //     change.extendToStartOfBlock();
+    //   });
+    //}
   };
 
   // Render the editor.
@@ -74,6 +99,7 @@ class SlateEditor extends React.Component {
     return (
       <div>
         <Editor
+          ref={editor => (this.editor = editor)}
           plugins={plugins}
           value={this.state.value}
           onChange={this.onChange}
@@ -81,7 +107,7 @@ class SlateEditor extends React.Component {
         />
         <div>
           <button onClick={resetTranscript}>Reset</button>
-          <span>{transcript}</span>
+          <span onChange={this.onTalk(transcript)}>{transcript}</span>
         </div>
       </div>
     );
