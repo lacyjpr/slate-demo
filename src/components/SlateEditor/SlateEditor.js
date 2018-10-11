@@ -61,12 +61,12 @@ class SlateEditor extends React.Component {
   onChange = ({ value }) => {
     console.log('onChange called');
     this.setState({ value });
-    console.log(value);
-    return;
+    console.log('value', value);
+    return null;
   };
 
   onTalk = transcript => {
-    console.log(transcript);
+    console.log('transcript', transcript);
     console.log('ontalk called');
     console.log(this.editor);
     if (typeof this.editor !== 'undefined' && transcript !== '') {
