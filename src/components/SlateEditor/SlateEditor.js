@@ -1,6 +1,7 @@
 import React from 'react';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
+import SpeechRecognition from 'react-speech-recognition';
 
 const initialValue = Value.fromJSON({
   document: {
@@ -61,13 +62,28 @@ class SlateEditor extends React.Component {
 
   // Render the editor.
   render() {
+    const {
+      transcript,
+      resetTranscript,
+      browserSupportsSpeechRecognition,
+    } = this.props;
+
+    if (!browserSupportsSpeechRecognition) {
+      return null;
+    }
     return (
-      <Editor
-        plugins={plugins}
-        value={this.state.value}
-        onChange={this.onChange}
-        renderMark={this.renderMark}
-      />
+      <div>
+        <Editor
+          plugins={plugins}
+          value={this.state.value}
+          onChange={this.onChange}
+          renderMark={this.renderMark}
+        />
+        <div>
+          <button onClick={resetTranscript}>Reset</button>
+          <span>{transcript}</span>
+        </div>
+      </div>
     );
   }
 
@@ -81,4 +97,4 @@ class SlateEditor extends React.Component {
   };
 }
 
-export default SlateEditor;
+export default SpeechRecognition(SlateEditor);
