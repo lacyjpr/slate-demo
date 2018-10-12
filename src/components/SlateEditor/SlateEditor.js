@@ -66,7 +66,7 @@ class SlateEditor extends React.Component {
   };
 
   onTalk = transcript => {
-    transcript.stopPropagation();
+    //transcript.stopPropagation();
     console.log('onTalk called');
     console.log('transcript', transcript);
     console.log(this.editor);
@@ -100,9 +100,7 @@ class SlateEditor extends React.Component {
         />
         <div>
           <button onClick={resetTranscript}>Reset</button>
-          <span onChange={transcript => this.onTalk(transcript)}>
-            {transcript}
-          </span>
+          <span onChange={this.onTalk(transcript)}>{transcript}</span>
         </div>
       </div>
     );
