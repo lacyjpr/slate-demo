@@ -67,6 +67,7 @@ class SlateEditor extends React.Component {
         value={this.state.value}
         onChange={this.onChange}
         renderMark={this.renderMark}
+        ref={editor => (this.editor = editor)}
       />
     );
   }
