@@ -14,7 +14,7 @@ class Speech extends Component {
     //transcript.stopPropagation();
     console.log('onTalk called');
     console.log('transcript', transcript);
-    console.log('editor', this.props.editor);
+    console.log('props', this.props);
     console.log(typeof this.props.editor);
     // this.props.editor.change(change => {
     //   change.insertText(transcript);

@@ -58,7 +58,10 @@ class SlateEditor extends React.Component {
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
     console.log('value', value);
+    console.log('typeof editor', typeof this.editor);
+    console.log('SlateEditor', this.editor);
     this.setState({ value });
+    //value.preventDefault();
   };
 
   // Render the editor.
@@ -72,7 +75,7 @@ class SlateEditor extends React.Component {
           renderMark={this.renderMark}
           ref={editor => (this.editor = editor)}
         />
-        <Speech editor={this.refs} />
+        <Speech editor={this.editor} />
       </div>
     );
   }
