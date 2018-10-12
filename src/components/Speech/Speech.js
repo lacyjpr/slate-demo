@@ -10,6 +10,23 @@ import SpeechRecognition from 'react-speech-recognition';
 //};
 
 class Speech extends Component {
+  onTalk = transcript => {
+    //transcript.stopPropagation();
+    console.log('onTalk called');
+    console.log('transcript', transcript);
+    console.log('editor', this.props.editor);
+    console.log(typeof this.props.editor);
+    // this.props.editor.change(change => {
+    //   change.insertText(transcript);
+    // });
+    if (typeof this.props.editor !== 'undefined' && transcript !== '') {
+      console.log(typeof this.props.editor);
+      this.props.editor.change(change => {
+        change.insertText(transcript);
+      });
+    }
+  };
+
   render() {
     const {
       transcript,
@@ -24,7 +41,7 @@ class Speech extends Component {
     return (
       <div>
         <button onClick={resetTranscript}>Reset</button>
-        <span>{transcript}</span>
+        <span onChange={this.onTalk(transcript)}>{transcript}</span>
       </div>
     );
   }

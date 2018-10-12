@@ -1,6 +1,7 @@
 import React from 'react';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
+import Speech from '../Speech';
 
 const initialValue = Value.fromJSON({
   document: {
@@ -56,19 +57,23 @@ class SlateEditor extends React.Component {
 
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
+    console.log('value', value);
     this.setState({ value });
   };
 
   // Render the editor.
   render() {
     return (
-      <Editor
-        plugins={plugins}
-        value={this.state.value}
-        onChange={this.onChange}
-        renderMark={this.renderMark}
-        ref={editor => (this.editor = editor)}
-      />
+      <div>
+        <Editor
+          plugins={plugins}
+          value={this.state.value}
+          onChange={this.onChange}
+          renderMark={this.renderMark}
+          ref={editor => (this.editor = editor)}
+        />
+        <Speech editor={this.refs} />
+      </div>
     );
   }
 
