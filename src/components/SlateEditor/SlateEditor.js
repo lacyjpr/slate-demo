@@ -59,12 +59,14 @@ class SlateEditor extends React.Component {
 
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
+    //value.stopPropagation();
     console.log('onChange called');
     this.setState({ value });
     console.log('value', value);
   };
 
   onTalk = transcript => {
+    transcript.stopPropagation();
     console.log('onTalk called');
     console.log('transcript', transcript);
     console.log(this.editor);
@@ -98,7 +100,9 @@ class SlateEditor extends React.Component {
         />
         <div>
           <button onClick={resetTranscript}>Reset</button>
-          <span onChange={this.onTalk(transcript)}>{transcript}</span>
+          <span onChange={transcript => this.onTalk(transcript)}>
+            {transcript}
+          </span>
         </div>
       </div>
     );
