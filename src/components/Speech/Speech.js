@@ -41,7 +41,9 @@ class Speech extends Component {
     return (
       <div>
         <button onClick={resetTranscript}>Reset</button>
-        <span onChange={this.onTalk(transcript)}>{transcript}</span>
+        <span name="Speech" onChange={this.onTalk(transcript)}>
+          {transcript}
+        </span>
       </div>
     );
   }

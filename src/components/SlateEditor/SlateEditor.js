@@ -60,8 +60,8 @@ class SlateEditor extends React.Component {
     console.log('value', value);
     console.log('typeof editor', typeof this.editor);
     console.log('SlateEditor', this.editor);
+    //value.stopImmediatePropagation();
     this.setState({ value });
-    //value.preventDefault();
   };
 
   // Render the editor.
