@@ -86,7 +86,7 @@ class Speech extends Component {
       upgrade();
     } else {
       start_button.style.display = 'inline-block';
-      var recognition = new webkitSpeechRecognition();
+      const recognition = new webkitSpeechRecognition();
       recognition.continuous = true;
       recognition.interimResults = true;
 
