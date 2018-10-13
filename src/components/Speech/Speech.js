@@ -10,19 +10,24 @@ import SpeechRecognition from 'react-speech-recognition';
 //};
 
 class Speech extends Component {
-  onTalk = transcript => {
+  onTalk = event => {
     //transcript.stopPropagation();
     console.log('onTalk called');
-    console.log('transcript', transcript);
+    console.log('transcript', event);
     console.log('props', this.props);
     console.log(typeof this.props.editor);
+
     // this.props.editor.change(change => {
     //   change.insertText(transcript);
     // });
-    if (typeof this.props.editor !== 'undefined' && transcript !== '') {
-      console.log(typeof this.props.editor);
+    // if (transcript.target.name !== 'speech') {
+    //   return;
+    // }
+    if (typeof this.props.editor !== 'undefined' && event !== '') {
+      console.log('updating', typeof this.props.editor);
+      console.log(event.target);
       this.props.editor.change(change => {
-        change.insertText(transcript);
+        change.insertText(event);
       });
     }
   };
@@ -42,7 +47,7 @@ class Speech extends Component {
       <div>
         <p className="App-intro">Speech Recognition</p>
         <button onClick={resetTranscript}>Reset</button>
-        <span name="Speech" onChange={this.onTalk(transcript)}>
+        <span value={transcript} id="speech" onChange={this.onTalk(transcript)}>
           {transcript}
         </span>
       </div>

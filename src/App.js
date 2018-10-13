@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 //import Editor from './components/Editor';
 import SlateEditor from './components/SlateEditor';
-//import Speech from './components/Speech';
+import Speech from './components/Speech';
 
 class App extends Component {
   render() {
@@ -15,7 +15,7 @@ class App extends Component {
         </p>
         <SlateEditor ref={editor => (this.editor = editor)} />
         {/* <p className="App-intro">Speech Recognition:</p> */}
-        {/* <Speech /> */}
+        {/* <Speech editor={this.editor} /> */}
       </div>
     );
   }
