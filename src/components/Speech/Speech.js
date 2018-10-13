@@ -25,7 +25,7 @@ class Speech extends Component {
     // }
     if (typeof this.props.editor !== 'undefined' && event !== '') {
       console.log('updating', typeof this.props.editor);
-      console.log(event.target);
+      console.log(event);
       this.props.editor.change(change => {
         change.insertText(event);
       });
