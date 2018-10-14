@@ -47,6 +47,7 @@ class Speech extends Component {
       <div>
         <p className="App-intro">Speech Recognition</p>
         <button onClick={resetTranscript}>Reset</button>
+
         <span value={transcript} id="speech" onChange={this.onTalk(transcript)}>
           {transcript}
         </span>
