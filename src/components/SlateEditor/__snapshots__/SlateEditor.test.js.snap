@@ -22,6 +22,7 @@ ShallowWrapper {
           autoCorrect={true}
           autoFocus={false}
           onChange={[Function]}
+          placeholder="Tell me a story!"
           plugins={
                     Array [
                               Object {
@@ -50,7 +51,7 @@ ShallowWrapper {
                                           Object {
                                             "marks": Array [],
                                             "object": "leaf",
-                                            "text": "This text can be edited by the user.",
+                                            "text": "",
                                           },
                                         ],
                                         "object": "text",
@@ -81,6 +82,7 @@ ShallowWrapper {
           "autoCorrect": true,
           "autoFocus": false,
           "onChange": [Function],
+          "placeholder": "Tell me a story!",
           "plugins": Array [
             Object {
               "onKeyDown": [Function],
@@ -106,7 +108,7 @@ ShallowWrapper {
                         Object {
                           "marks": Array [],
                           "object": "leaf",
-                          "text": "This text can be edited by the user.",
+                          "text": "",
                         },
                       ],
                       "object": "text",
@@ -150,6 +152,7 @@ ShallowWrapper {
             autoCorrect={true}
             autoFocus={false}
             onChange={[Function]}
+            placeholder="Tell me a story!"
             plugins={
                         Array [
                                     Object {
@@ -178,7 +181,7 @@ ShallowWrapper {
                                                 Object {
                                                   "marks": Array [],
                                                   "object": "leaf",
-                                                  "text": "This text can be edited by the user.",
+                                                  "text": "",
                                                 },
                                               ],
                                               "object": "text",
@@ -209,6 +212,7 @@ ShallowWrapper {
             "autoCorrect": true,
             "autoFocus": false,
             "onChange": [Function],
+            "placeholder": "Tell me a story!",
             "plugins": Array [
               Object {
                 "onKeyDown": [Function],
@@ -234,7 +238,7 @@ ShallowWrapper {
                           Object {
                             "marks": Array [],
                             "object": "leaf",
-                            "text": "This text can be edited by the user.",
+                            "text": "",
                           },
                         ],
                         "object": "text",
