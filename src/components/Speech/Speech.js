@@ -12,8 +12,8 @@ import SpeechRecognition from 'react-speech-recognition';
 class Speech extends Component {
   // Only update if transcript has changed credit jenovs https://github.com/jenovs/slate-voice-demo
   componentDidUpdate(prevProps) {
-    if (prevProps.transcript !== this.props.transcript) {
-      this.onTalk(this.props.transcript);
+    if (prevProps.finalTranscript !== this.props.finalTranscript) {
+      this.onTalk(this.props.finalTranscript);
     }
   }
 
@@ -44,6 +44,7 @@ class Speech extends Component {
   render() {
     const {
       transcript,
+      finalTranscript,
       resetTranscript,
       browserSupportsSpeechRecognition,
     } = this.props;
@@ -57,8 +58,8 @@ class Speech extends Component {
         <p className="App-intro">Speech Recognition</p>
         <button onClick={resetTranscript}>Reset</button>
         {/* Infinity: onTalk fires every time SlateEditor updates, updating SlateEditor. */}
-        <span value={transcript} id="speech">
-          {transcript}
+        <span value={finalTranscript} id="speech">
+          {finalTranscript}
         </span>
       </div>
     );
