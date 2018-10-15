@@ -35,7 +35,7 @@ class Speech extends Component {
       console.log('updating', typeof this.props.editor);
       console.log(event);
       this.props.editor.change(change => {
-        change.insertText(event);
+        change.insertText(' ' + event);
       });
       this.props.resetTranscript();
     }
