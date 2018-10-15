@@ -10,11 +10,18 @@ import SpeechRecognition from 'react-speech-recognition';
 //};
 
 class Speech extends Component {
-  onTalk = event => {
+  componentDidUpdate(prevProps) {
+    if (prevProps.transcript !== this.props.transcript) {
+      this.onTalk(this.props.transcript);
+    }
+  }
+
+  onTalk = (event, prevProps) => {
     //transcript.stopPropagation();
     console.log('onTalk called');
     console.log('transcript', event);
     console.log('props', this.props);
+    console.log('prevProps', prevProps);
     console.log(typeof this.props.editor);
 
     // this.props.editor.change(change => {
@@ -29,6 +36,7 @@ class Speech extends Component {
       this.props.editor.change(change => {
         change.insertText(event);
       });
+      this.props.resetTranscript();
     }
   };
 
@@ -48,7 +56,7 @@ class Speech extends Component {
         <p className="App-intro">Speech Recognition</p>
         <button onClick={resetTranscript}>Reset</button>
         {/* Infinity: onTalk fires every time SlateEditor updates, updating SlateEditor. */}
-        <span value={transcript} id="speech" onChange={this.onTalk(transcript)}>
+        <span value={transcript} id="speech">
           {transcript}
         </span>
       </div>
