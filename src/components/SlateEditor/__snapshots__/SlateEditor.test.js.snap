@@ -15,107 +15,257 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "autoCorrect": true,
-      "autoFocus": false,
-      "onChange": [Function],
-      "plugins": Array [
-        Object {
-          "onKeyDown": [Function],
-        },
-        Object {
-          "onKeyDown": [Function],
-        },
-      ],
-      "readOnly": false,
-      "renderMark": [Function],
-      "schema": Object {},
-      "spellCheck": true,
-      "value": Object {
-        "document": Object {
-          "data": Object {},
-          "nodes": Array [
-            Object {
-              "data": Object {},
-              "isVoid": false,
-              "nodes": Array [
-                Object {
-                  "leaves": Array [
+      "children": Array [
+        <Editor
+          autoCorrect={true}
+          autoFocus={false}
+          onChange={[Function]}
+          plugins={
+                    Array [
+                              Object {
+                                "onKeyDown": [Function],
+                              },
+                              Object {
+                                "onKeyDown": [Function],
+                              },
+                            ]
+          }
+          readOnly={false}
+          renderMark={[Function]}
+          schema={Object {}}
+          spellCheck={true}
+          value={
                     Object {
-                      "marks": Array [],
-                      "object": "leaf",
-                      "text": "This text can be edited by the user.",
-                    },
-                  ],
-                  "object": "text",
-                },
-              ],
-              "object": "block",
-              "type": "paragraph",
-            },
-          ],
-          "object": "document",
-        },
-        "object": "value",
-      },
+                              "document": Object {
+                                "data": Object {},
+                                "nodes": Array [
+                                  Object {
+                                    "data": Object {},
+                                    "isVoid": false,
+                                    "nodes": Array [
+                                      Object {
+                                        "leaves": Array [
+                                          Object {
+                                            "marks": Array [],
+                                            "object": "leaf",
+                                            "text": "This text can be edited by the user.",
+                                          },
+                                        ],
+                                        "object": "text",
+                                      },
+                                    ],
+                                    "object": "block",
+                                    "type": "paragraph",
+                                  },
+                                ],
+                                "object": "document",
+                              },
+                              "object": "value",
+                            }
+          }
+/>,
+        <SpeechRecognitionContainer
+          editor={undefined}
+/>,
+      ],
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "autoCorrect": true,
+          "autoFocus": false,
+          "onChange": [Function],
+          "plugins": Array [
+            Object {
+              "onKeyDown": [Function],
+            },
+            Object {
+              "onKeyDown": [Function],
+            },
+          ],
+          "readOnly": false,
+          "renderMark": [Function],
+          "schema": Object {},
+          "spellCheck": true,
+          "value": Object {
+            "document": Object {
+              "data": Object {},
+              "nodes": Array [
+                Object {
+                  "data": Object {},
+                  "isVoid": false,
+                  "nodes": Array [
+                    Object {
+                      "leaves": Array [
+                        Object {
+                          "marks": Array [],
+                          "object": "leaf",
+                          "text": "This text can be edited by the user.",
+                        },
+                      ],
+                      "object": "text",
+                    },
+                  ],
+                  "object": "block",
+                  "type": "paragraph",
+                },
+              ],
+              "object": "document",
+            },
+            "object": "value",
+          },
+        },
+        "ref": [Function],
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "editor": undefined,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "autoCorrect": true,
-        "autoFocus": false,
-        "onChange": [Function],
-        "plugins": Array [
-          Object {
-            "onKeyDown": [Function],
-          },
-          Object {
-            "onKeyDown": [Function],
-          },
+        "children": Array [
+          <Editor
+            autoCorrect={true}
+            autoFocus={false}
+            onChange={[Function]}
+            plugins={
+                        Array [
+                                    Object {
+                                      "onKeyDown": [Function],
+                                    },
+                                    Object {
+                                      "onKeyDown": [Function],
+                                    },
+                                  ]
+            }
+            readOnly={false}
+            renderMark={[Function]}
+            schema={Object {}}
+            spellCheck={true}
+            value={
+                        Object {
+                                    "document": Object {
+                                      "data": Object {},
+                                      "nodes": Array [
+                                        Object {
+                                          "data": Object {},
+                                          "isVoid": false,
+                                          "nodes": Array [
+                                            Object {
+                                              "leaves": Array [
+                                                Object {
+                                                  "marks": Array [],
+                                                  "object": "leaf",
+                                                  "text": "This text can be edited by the user.",
+                                                },
+                                              ],
+                                              "object": "text",
+                                            },
+                                          ],
+                                          "object": "block",
+                                          "type": "paragraph",
+                                        },
+                                      ],
+                                      "object": "document",
+                                    },
+                                    "object": "value",
+                                  }
+            }
+/>,
+          <SpeechRecognitionContainer
+            editor={undefined}
+/>,
         ],
-        "readOnly": false,
-        "renderMark": [Function],
-        "schema": Object {},
-        "spellCheck": true,
-        "value": Object {
-          "document": Object {
-            "data": Object {},
-            "nodes": Array [
-              Object {
-                "data": Object {},
-                "isVoid": false,
-                "nodes": Array [
-                  Object {
-                    "leaves": Array [
-                      Object {
-                        "marks": Array [],
-                        "object": "leaf",
-                        "text": "This text can be edited by the user.",
-                      },
-                    ],
-                    "object": "text",
-                  },
-                ],
-                "object": "block",
-                "type": "paragraph",
-              },
-            ],
-            "object": "document",
-          },
-          "object": "value",
-        },
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "autoCorrect": true,
+            "autoFocus": false,
+            "onChange": [Function],
+            "plugins": Array [
+              Object {
+                "onKeyDown": [Function],
+              },
+              Object {
+                "onKeyDown": [Function],
+              },
+            ],
+            "readOnly": false,
+            "renderMark": [Function],
+            "schema": Object {},
+            "spellCheck": true,
+            "value": Object {
+              "document": Object {
+                "data": Object {},
+                "nodes": Array [
+                  Object {
+                    "data": Object {},
+                    "isVoid": false,
+                    "nodes": Array [
+                      Object {
+                        "leaves": Array [
+                          Object {
+                            "marks": Array [],
+                            "object": "leaf",
+                            "text": "This text can be edited by the user.",
+                          },
+                        ],
+                        "object": "text",
+                      },
+                    ],
+                    "object": "block",
+                    "type": "paragraph",
+                  },
+                ],
+                "object": "document",
+              },
+              "object": "value",
+            },
+          },
+          "ref": [Function],
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "editor": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
