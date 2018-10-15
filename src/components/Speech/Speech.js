@@ -55,8 +55,8 @@ class Speech extends Component {
 
     return (
       <div>
-        <p className="App-intro">Speech Recognition</p>
-        <button onClick={resetTranscript}>Reset</button>
+        {/* <p className="App-intro">Speech Recognition</p>
+        <button onClick={resetTranscript}>Reset</button> */}
         {/* Infinity: onTalk fires every time SlateEditor updates, updating SlateEditor. */}
         <span value={finalTranscript} id="speech">
           {finalTranscript}

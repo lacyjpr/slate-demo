@@ -14,7 +14,7 @@ const initialValue = Value.fromJSON({
             object: 'text',
             leaves: [
               {
-                text: 'This text can be edited by the user.',
+                text: '',
               },
             ],
           },
@@ -75,6 +75,7 @@ class SlateEditor extends React.Component {
           onChange={this.onChange}
           renderMark={this.renderMark}
           ref={editor => (this.editor = editor)}
+          placeholder={'Tell me a story!'}
         />
         <Speech editor={this.editor} />
       </div>
