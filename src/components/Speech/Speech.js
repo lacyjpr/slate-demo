@@ -10,19 +10,19 @@ import SpeechRecognition from 'react-speech-recognition';
 //};
 
 class Speech extends Component {
-  // Only update if transcript has changed credit jenovs https://github.com/jenovs/slate-voice-demo
+  // Only update if transcript has changed. Credit: jenovs https://github.com/jenovs/slate-voice-demo
   componentDidUpdate(prevProps) {
+    console.log('prevProps', prevProps);
     if (prevProps.finalTranscript !== this.props.finalTranscript) {
       this.onTalk(this.props.finalTranscript);
     }
   }
 
-  onTalk = (event, prevProps) => {
+  onTalk = event => {
     //transcript.stopPropagation();
     console.log('onTalk called');
     console.log('transcript', event);
     console.log('props', this.props);
-    console.log('prevProps', prevProps);
     console.log(typeof this.props.editor);
 
     // this.props.editor.change(change => {
