@@ -77,7 +77,7 @@ class SlateEditor extends React.Component {
           ref={editor => (this.editor = editor)}
           placeholder={'Tell me a story!'}
         />
-        {/* <Speech editor={this.editor} /> */}
+        <Speech editor={this.editor} />
       </div>
     );
   }
