@@ -42,16 +42,16 @@ class Speech extends Component {
   };
 
   render() {
-    const {
-      transcript,
-      finalTranscript,
-      resetTranscript,
-      browserSupportsSpeechRecognition,
-    } = this.props;
+    // const {
+    //   transcript,
+    //   finalTranscript,
+    //   resetTranscript,
+    //   browserSupportsSpeechRecognition,
+    // } = this.props;
 
-    if (!browserSupportsSpeechRecognition) {
-      return null;
-    }
+    // if (!browserSupportsSpeechRecognition) {
+    //   return null;
+    // }
 
     return null;
     // <div>
