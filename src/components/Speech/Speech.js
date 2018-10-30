@@ -16,7 +16,6 @@ const propTypes = {
 class Speech extends Component {
   // Only update if transcript has changed. Credit: jenovs https://github.com/jenovs/slate-voice-demo
   componentDidUpdate(prevProps) {
-    console.log('prevProps', prevProps);
     if (prevProps.finalTranscript !== this.props.finalTranscript) {
       this.onTalk(this.props.finalTranscript);
     }
@@ -29,21 +28,7 @@ class Speech extends Component {
   };
 
   onTalk = event => {
-    //transcript.stopPropagation();
-    console.log('onTalk called');
-    console.log('transcript', event);
-    console.log('props', this.props);
-    console.log(typeof this.props.editor);
-
-    // this.props.editor.change(change => {
-    //   change.insertText(transcript);
-    // });
-    // if (transcript.target.name !== 'speech') {
-    //   return;
-    // }
     if (typeof this.props.editor !== 'undefined' && event !== '') {
-      console.log('updating', typeof this.props.editor);
-      console.log(event);
       this.props.editor.change(change => {
         change.insertText(event + ' ');
       });
@@ -67,27 +52,6 @@ class Speech extends Component {
         )}
       </div>
     );
-
-    // const {
-    //   transcript,
-    //   finalTranscript,
-    //   resetTranscript,
-    //   browserSupportsSpeechRecognition,
-    // } = this.props;
-
-    // if (!browserSupportsSpeechRecognition) {
-    //   return null;
-    // }
-
-    //return null;
-    // <div>
-    //   {/* <p className="App-intro">Speech Recognition</p>
-    //   <button onClick={resetTranscript}>Reset</button> */}
-    //   {/* Infinity: onTalk fires every time SlateEditor updates, updating SlateEditor. */}
-    //   <span value={finalTranscript} id="speech">
-    //     {finalTranscript}
-    //   </span>
-    // </div>
   }
 }
 
