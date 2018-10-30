@@ -18,6 +18,12 @@ class Speech extends Component {
     }
   }
 
+  micToggle = () => {
+    !this.props.listening
+      ? this.props.startListening()
+      : this.props.stopListening();
+  };
+
   onTalk = event => {
     //transcript.stopPropagation();
     console.log('onTalk called');
@@ -42,6 +48,19 @@ class Speech extends Component {
   };
 
   render() {
+    const { browserSupportsSpeechRecognition, listening } = this.props;
+
+    if (!browserSupportsSpeechRecognition) {
+      return null;
+    }
+
+    return (
+      <div>
+        {!listening && <button onClick={this.micToggle}>Listen</button>}
+        {listening && <button onClick={this.micToggle}>Stop Listening</button>}
+      </div>
+    );
+
     // const {
     //   transcript,
     //   finalTranscript,
@@ -53,7 +72,7 @@ class Speech extends Component {
     //   return null;
     // }
 
-    return null;
+    //return null;
     // <div>
     //   {/* <p className="App-intro">Speech Recognition</p>
     //   <button onClick={resetTranscript}>Reset</button> */}
