@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import SpeechRecognition from 'react-speech-recognition';
 
 // Todo: Add propTypes
-//const propTypes = {
-// // Props injected by SpeechRecognition
-//transcript: PropTypes.string,
-//resetTranscript: PropTypes.func,
-//browserSupportsSpeechRecognition: PropTypes.bool,
-//};
+const propTypes = {
+  // Props injected by SpeechRecognition
+  transcript: PropTypes.string,
+  resetTranscript: PropTypes.func,
+  browserSupportsSpeechRecognition: PropTypes.bool,
+};
 
 class Speech extends Component {
   // Only update if transcript has changed. Credit: jenovs https://github.com/jenovs/slate-voice-demo
@@ -87,7 +87,7 @@ class Speech extends Component {
   }
 }
 
-// Speech.propTypes = propTypes;
+Speech.propTypes = propTypes;
 
 const options = {
   autoStart: false,
