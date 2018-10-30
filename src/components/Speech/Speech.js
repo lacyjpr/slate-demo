@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import SpeechRecognition from 'react-speech-recognition';
 
-// Todo: Add propTypes
 const propTypes = {
   // Props injected by SpeechRecognition
   transcript: PropTypes.string,
+  finalTranscript: PropTypes.string,
   resetTranscript: PropTypes.func,
+  startListening: PropTypes.func,
+  stopListening: PropTypes.func,
   browserSupportsSpeechRecognition: PropTypes.bool,
+  listening: PropTypes.bool,
 };
 
 class Speech extends Component {
