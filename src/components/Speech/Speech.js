@@ -56,8 +56,11 @@ class Speech extends Component {
 
     return (
       <div>
-        {!listening && <button onClick={this.micToggle}>Listen</button>}
-        {listening && <button onClick={this.micToggle}>Stop Listening</button>}
+        {!listening ? (
+          <button onClick={this.micToggle}>Listen</button>
+        ) : (
+          <button onClick={this.micToggle}>Stop Listening</button>
+        )}
       </div>
     );
 
