@@ -48,11 +48,7 @@ class Speech extends Component {
   };
 
   render() {
-    const {
-      browserSupportsSpeechRecognition,
-      listening,
-      autoStart,
-    } = this.props;
+    const { browserSupportsSpeechRecognition, listening } = this.props;
 
     if (!browserSupportsSpeechRecognition) {
       return null;
