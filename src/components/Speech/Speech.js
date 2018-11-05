@@ -29,9 +29,10 @@ class Speech extends Component {
 
   onTalk = event => {
     if (typeof this.props.editor !== 'undefined' && event !== '') {
-      this.props.editor.change(change => {
-        change.insertText(event + ' ');
-      });
+      // this.props.editor.change(change => {
+      //   change.insertText(event + ' ');
+      // });
+      this.props.editor.insertText(event + ' ');
       this.props.resetTranscript();
     }
   };

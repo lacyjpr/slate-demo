@@ -55,6 +55,10 @@ class SlateEditor extends React.Component {
     value: initialValue,
   };
 
+  componentDidMount() {
+    this.editor.focus();
+  }
+
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
     console.log('value', value);
