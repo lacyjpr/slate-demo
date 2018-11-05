@@ -23,8 +23,8 @@ class Speech extends Component {
 
   micToggle = () => {
     !this.props.listening
-      ? this.props.startListening()
-      : this.props.stopListening();
+      ? (this.props.startListening(), this.props.editor.focus())
+      : (this.props.stopListening(), this.props.editor.focus());
   };
 
   onTalk = event => {

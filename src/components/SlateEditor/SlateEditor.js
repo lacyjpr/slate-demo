@@ -86,12 +86,14 @@ class SlateEditor extends React.Component {
     );
   }
 
-  renderMark = props => {
+  renderMark = (props, editor, next) => {
     switch (props.mark.type) {
       case 'bold':
         return <strong>{props.children}</strong>;
       case 'italic':
         return <em>{props.children}</em>;
+      default:
+        return next();
     }
   };
 }
