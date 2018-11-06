@@ -29,15 +29,15 @@ function MarkHotkey(options) {
 
   // Return our "plugin" object, containing the `onKeyDown` handler.
   return {
-    onKeyDown(event, change) {
+    onKeyDown(event, editor, next) {
       // Check that the key pressed matches our `key` option.
-      if (!event.ctrlKey || event.key != key) return;
+      if (!event.ctrlKey || event.key != key) return next();
 
       // Prevent the default characters from being inserted.
       event.preventDefault();
 
       // Toggle the mark `type`.
-      change.toggleMark(type);
+      editor.toggleMark(type);
       return true;
     },
   };
