@@ -79,7 +79,7 @@ class SlateEditor extends React.Component {
           onChange={this.onChange}
           renderMark={this.renderMark}
           ref={editor => (this.editor = editor)}
-          placeholder={'Dictate'}
+          //placeholder={'Dictate'}
         />
         <Speech editor={this.editor} />
       </div>
