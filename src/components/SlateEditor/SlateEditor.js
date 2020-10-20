@@ -1,7 +1,7 @@
 import React from 'react';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
-import SpeechRecognition from 'react-speech-recognition';
+import Speech from '../Speech';
 
 const initialValue = Value.fromJSON({
   document: {
@@ -14,7 +14,7 @@ const initialValue = Value.fromJSON({
             object: 'text',
             leaves: [
               {
-                text: 'This text can be edited by the user.',
+                text: '',
               },
             ],
           },
@@ -24,22 +24,20 @@ const initialValue = Value.fromJSON({
   },
 });
 
-//const transcript = '';
-
 function MarkHotkey(options) {
   const { type, key } = options;
 
   // Return our "plugin" object, containing the `onKeyDown` handler.
   return {
-    onKeyDown(event, change) {
+    onKeyDown(event, editor, next) {
       // Check that the key pressed matches our `key` option.
-      if (!event.ctrlKey || event.key != key) return;
+      if (!event.ctrlKey || event.key != key) return next();
 
       // Prevent the default characters from being inserted.
       event.preventDefault();
 
       // Toggle the mark `type`.
-      change.toggleMark(type);
+      editor.toggleMark(type);
       return true;
     },
   };
@@ -57,61 +55,47 @@ class SlateEditor extends React.Component {
     value: initialValue,
   };
 
+  componentDidMount() {
+    this.editor.focus();
+  }
+
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
-    console.log('onChange called');
+    console.log('value', value.toJS());
+    console.log('typeof editor', typeof this.editor);
+    console.log('SlateEditor', this.editor);
+    //value.stopImmediatePropagation();
     this.setState({ value });
-    console.log('value', value);
-  };
-
-  onTalk = transcript => {
-    console.log('onTalk called');
-    console.log('transcript', transcript);
-    console.log(this.editor);
-    if (typeof this.editor !== 'undefined' && transcript !== '') {
-      console.log(typeof this.editor);
-      this.editor.change(change => {
-        change.insertText(transcript);
-      });
-    }
+    return false;
   };
 
   // Render the editor.
   render() {
-    const {
-      transcript,
-      resetTranscript,
-      browserSupportsSpeechRecognition,
-    } = this.props;
-
-    if (!browserSupportsSpeechRecognition) {
-      return null;
-    }
     return (
       <div>
         <Editor
-          ref={editor => (this.editor = editor)}
           plugins={plugins}
           value={this.state.value}
           onChange={this.onChange}
           renderMark={this.renderMark}
+          ref={editor => (this.editor = editor)}
+          //placeholder={'Dictate'}
         />
-        <div>
-          <button onClick={resetTranscript}>Reset</button>
-          <span onChange={this.onTalk(transcript)}>{transcript}</span>
-        </div>
+        <Speech editor={this.editor} />
       </div>
     );
   }
 
-  renderMark = props => {
+  renderMark = (props, editor, next) => {
     switch (props.mark.type) {
       case 'bold':
         return <strong>{props.children}</strong>;
       case 'italic':
         return <em>{props.children}</em>;
+      default:
+        return next();
     }
   };
 }
 
-export default SpeechRecognition(SlateEditor);
+export default SlateEditor;

@@ -17,5 +17,9 @@ exports[`<Editor /> renders correctly 1`] = `
   >
     This text can be edited by the user.
   </div>
+  <input
+    type="text"
+    x-webkit-speech={true}
+  />
 </div>
 `;
