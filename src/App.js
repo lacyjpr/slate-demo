@@ -11,7 +11,7 @@ class App extends Component {
         {/* <p className="App-intro">Roll your own:</p>
         <Editor /> */}
         <p className="App-intro">
-          Slate.js:(use ctrl-b for bold, ctrl-i for italic)
+          ctrl-b for bold, ctrl-i for italic)
         </p>
         <SlateEditor ref={editor => (this.editor = editor)} />
         {/* <p className="App-intro">Speech Recognition:</p> */}
