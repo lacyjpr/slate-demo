@@ -61,7 +61,7 @@ class SlateEditor extends React.Component {
 
   // On change, update the app's React state with the new editor value.
   onChange = ({ value }) => {
-    console.log('value', value);
+    console.log('value', value.toJS());
     console.log('typeof editor', typeof this.editor);
     console.log('SlateEditor', this.editor);
     //value.stopImmediatePropagation();
